@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "Courgette";
+  src: url("fonts/courgette/Courgette-Regular.ttf") format('ttf');
+}
+
+
+.parallax-container {
+  height: 1000px;
+}
+
+.navbar-fixed {
+  color: rgb(255, 214, 0);
+}
+
+#imagem-fone {
+  width: 100%;
+}
+
+.cont-destaque {
+  position: absolute;
+  width: 100%;
+  top: 40%;
+}
+
+#destaque {
+  text-align: center;
+  font-family: 'Courgette', sans-serif;
+  font-size: 60px;
+  color: #009d31;
+}
