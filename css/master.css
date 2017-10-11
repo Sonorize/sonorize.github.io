@@ -3,28 +3,32 @@
   src: url("fonts/courgette/Courgette-Regular.ttf") format('ttf');
 }
 
-
 .parallax-container {
   height: 1000px;
 }
 
-.navbar-fixed {
-  color: rgb(255, 214, 0);
-}
-
 #imagem-fone {
+  height: 100%;
   width: 100%;
 }
 
-.cont-destaque {
+/*.cont-destaque {
   position: absolute;
   width: 100%;
-  top: 40%;
-}
+  height: 100%;
+  opacity: 0.5;
+  background-color: black;
+}*/
 
 #destaque {
   text-align: center;
-  font-family: 'Courgette', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-size: 60px;
-  color: #009d31;
+  color: #8ac34a;
+  opacity: 1;
+  top: 40%;
+}
+
+#logo-menu {
+  height: 6vh;
 }
