@@ -1,8 +1,6 @@
-
-/* Menu Mobile */
-$(".button-collapse").sideNav();
-
-/* Efeito Parallax */
-$(document).ready(function(){
-  $('.parallax').parallax();
-});
+(function($){
+  $(function(){
+    $('.button-collapse').sideNav();
+    $('.parallax').parallax();
+  });
+})(jQuery);
