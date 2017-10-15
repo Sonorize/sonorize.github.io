@@ -1,28 +1,39 @@
-$(function() {
-  $("form").on("submit", function(e) {
-    e.preventDefault();
-    //Preparando a requisição
-    let request = gapi.client.youtube.search.list({
-        part: "snippet",
-        type: "video",
-        q: encodeURIComponent($("#search").val()).replace(/%20/g, "+"),
-        maxResults: 3,
-        order: "viewCount",
-        publishedAfter: "2015-01-0100:00:00Z"
-    });
-    //Executando requisição
-    request.execute(function(response) {
-      let results = response.results;
-      $.each(results.itens, function(index, item) {
-        console.console.log(item);
-      });
-    });
+function init() {
+  gapi.client.setApiKey("AIzaSyB04SN1r0eQXLugq551J8RM66CRxDXcpdY");
+  gapi.client.load("youtube", "v3", function() {
+    // yt api is ready
   });
+}
+function tplawesome(e,t){res=e;for(var n=0;n<t.length;n++){res=res.replace(/\{\{(.*?)\}\}/g,function(e,r){return t[n][r]})}return res}
+
+$(function() {
+    $("form").on("submit", function(e) {
+       e.preventDefault();
+       // prepare the request
+       var request = gapi.client.youtube.search.list({
+            part: "snippet",
+            type: "video",
+            q: encodeURIComponent($("#search").val()).replace(/%20/g, "+"),
+            maxResults: 3,
+            order: "viewCount",
+            publishedAfter: "2015-01-01T00:00:00Z"
+       });
+       // execute the request
+       request.execute(function(response) {
+          var results = response.result;
+          $("#results").html("");
+          $.each(results.items, function(index, item) {
+            $.get("tpl/item.html", function(data) {
+                $("#results").append(tplawesome(data, [{"title":item.snippet.title, "videoid":item.id.videoId}]));
+            });
+          });
+          resetVideoHeight();
+       });
+    });
+
+    $(window).on("resize", resetVideoHeight);
 });
 
-function init() {
-  gapi.client.setApiKey("AIzaSyCmreUnb71DAq_J9UnpKeguFA8oiJqb4qQ");
-  gapi.client.load("youtube", "v3", function() {
-    //API YouTube Pronta
-  });
+function resetVideoHeight() {
+    $(".video").css("height", $("#results").width() * 9/16);
 }
