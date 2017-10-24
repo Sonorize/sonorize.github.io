@@ -7,7 +7,7 @@
   <title>Sonorize</title>
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/estilo.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/tarefas.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/playlist.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link rel="icon" href="imgs/icon.png">
   <link href="https://fonts.googleapis.com/css?family=PT+Sans|Raleway|Ubuntu" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -39,7 +39,7 @@
 
   <main id="app">
     <div id="info-usuario">
-      <label for="nome-usuario">Nome do usuário:</label>
+      <!-- <label for="nome-usuario">Nome do usuário:</label> -->
       <input type="text" id="nome-usuario" placeholder="Digite seu nome...">
       <button id="carregar">Carregar</button>
       <button id="salvar">Salvar</button>
@@ -51,7 +51,7 @@
 
 
     </div>
-    <ul id="lista-tarefas">
+    <ul id="lista-playlist">
 
     </ul>
 
@@ -60,20 +60,12 @@
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <form action="#">
-                <p><input type="text" id="search" placeholder="Type something..." autocomplete="off" class="form-control" /></p>
-                <p><input type="submit" value="Search" class="form-control btn btn-primary w100"></p>
+                <p><input type="text" id="search" placeholder="Digite para procurar no YouTube" autocomplete="off" class="form-control" /></p>
+                <p><input type="submit" value="Buscar" class="form-control btn btn-primary w100"></p>
             </form>
             <div id="results"></div>
         </div>
     </div>
-
-
-
-
-
-
-
-
 
   </main>
 
@@ -93,11 +85,11 @@
     </div>
   </footer>
 
-  <script src="https://apis.google.com/js/client.js?onload=init"></script>
   <script src="js/jquery-3.2.1.js"></script>
   <script src="js/app.js"></script>
+  <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
   <script src="js/materialize.js"></script>
-  <script src="js/tarefas.js"></script>
+  <script src="js/playlist.js"></script>
   <script src="js/motor.js"></script>
 
   </body>

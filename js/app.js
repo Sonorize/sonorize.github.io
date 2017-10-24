@@ -5,9 +5,11 @@ function googleApiClientReady() {
     //API do YouTube pronta
   });
 }
+
 function tplawesome(e,t){res=e;for(let n=0;n<t.length;n++){res=res.replace(/\{\{(.*?)\}\}/g,function(e,r){return t[n][r]})}return res}
 
-$(function searchA() {
+function searchA() {
+  $(function() {
     $("form").on("submit", function(e) {
        e.preventDefault();
        //Preparando a requsição
@@ -15,7 +17,7 @@ $(function searchA() {
             part: "snippet",
             type: "video",
             q: encodeURIComponent($("#search").val()).replace(/%20/g, "+"),
-            maxResults: 3,
+            maxResults: 10,
             order: "viewCount",
        });
        //Executando a requsição
@@ -31,9 +33,16 @@ $(function searchA() {
        });
     });
 
+    /// fim do $('form')
+  });
+
     $(window).on("resize", resetVideoHeight);
-});
+}
 
 function resetVideoHeight() {
     $(".video").css("height", $("#results").width() * 9/16);
+}
+
+function init() {
+  alert();
 }

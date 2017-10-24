@@ -8,7 +8,7 @@ let tarefas = [
 // Exercício 1: carregar as tarefas existentes
 // ------------
 //
-let containerEl = document.querySelector('#lista-tarefas');
+let containerEl = document.querySelector('#lista-playlist');
 function insereTarefaNaPagina(tarefa) {
   let tarefaLiEl = document.createElement('li');
   let musicaLiEl = document.createElement('li');
