@@ -1,26 +1,26 @@
-function googleApiClientReady() {
+function init() {
   gapi.client.setApiKey("AIzaSyB04SN1r0eQXLugq551J8RM66CRxDXcpdY");
   gapi.client.load("youtube", "v3", function() {
-    searchA();
-    //API do YouTube pronta
+    // yt api is ready
   });
 }
-function tplawesome(e,t){res=e;for(let n=0;n<t.length;n++){res=res.replace(/\{\{(.*?)\}\}/g,function(e,r){return t[n][r]})}return res}
+function tplawesome(e,t){res=e;for(var n=0;n<t.length;n++){res=res.replace(/\{\{(.*?)\}\}/g,function(e,r){return t[n][r]})}return res}
 
-$(function searchA() {
+$(function search() {
     $("form").on("submit", function(e) {
        e.preventDefault();
-       //Preparando a requsição
+       // prepare the request
        let request = gapi.client.youtube.search.list({
             part: "snippet",
             type: "video",
             q: encodeURIComponent($("#search").val()).replace(/%20/g, "+"),
             maxResults: 3,
             order: "viewCount",
+            publishedAfter: "2015-01-01T00:00:00Z"
        });
-       //Executando a requsição
+       // execute the request
        request.execute(function(response) {
-          let results = response.result;
+          var results = response.result;
           $("#results").html("");
           $.each(results.items, function(index, item) {
             $.get("tpl/item.html", function(data) {
