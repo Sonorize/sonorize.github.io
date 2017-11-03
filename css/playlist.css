@@ -4,7 +4,12 @@ html, body {
 }
 
 body {
-  background-color: #1b1b1b;
+  /*background-color: #1b1b1b;*/
+}
+
+#fundo {
+  background-image: linear-gradient(45deg, #039ffa, #04fa5a);
+  min-height: calc(100% - 189.297px - 64px);
 }
 
 #app {
@@ -16,12 +21,19 @@ body {
   background-color: #252525;
   color: #04fa5a;
   padding: 1rem;
+  min-height: calc(100% - 189.297px - 64px);
 }
 
 #lista-tarefas {
   list-style-type: none;
   padding: 1rem;
   margin: 0;
+}
+
+#nova-tarefa {
+  width: 90%;
+  box-sizing: border-box;
+  float: right;
 }
 
 .nova-tarefa {
@@ -39,36 +51,39 @@ body {
   border: none;
 }
 
-#nova-tarefa-nome {
-  flex: 1;
-}
-
-#nova-tarefa-nome::input-placeholder {
-  font-style: italic;
-}
-
-#nova-tarefa-nome,
-.item-tarefa {
-  box-sizing: border-box;
-  padding: 0.5rem 0.5rem 0.5rem 1.5rem;
-  /*background-color: #000;*/
-}
-
 .nova-tarefa,
 .item-tarefa {
   width: 100%;
 }
 
-#nova-tarefa-nome,
-.item-tarefa:not(:last-child) {
-  border-bottom: 1px solid #04fa5a;
+#incluir-nova-tarefa {
+  clear: left;
+  position: relative;
+  left: 0rem;
+  cursor: pointer;
+  top: 4rem;
 }
 
 #incluir-nova-tarefa {
-  position: absolute;
-  left: 1rem;
-  float: left;
+  clear: left;
+  position: relative;
+  left: 0rem;
   cursor: pointer;
+  top: 4rem;
+}
+
+#incluir-nova-tarefa > .material-icons {
+  background-color: #04fa5a;
+  color: #000;
+  /*font-weight: bold;*/
+}
+
+#incluir-nova-tarefa > .material-icons:hover {
+  background-color: #6aff9e;
+}
+
+#incluir-nova-tarefa > .material-icons:focus {
+  background-color: #6aff9e;
 }
 
 .item-tarefa {
@@ -92,10 +107,7 @@ body {
   float: right;
 }
 
-/* --------------------------------------------
- * Novos estilos para a prática de WebStorage
- */
-#info-usuario {
+/*#info-usuario {
   display: flex;
   border-radius: 9px 9px 0 0;
   font-size: 1rem;
@@ -109,22 +121,22 @@ body {
 #info-usuario > label {
   color: #04fa5a;
   cursor: pointer;
-}
+}*/
 
-#nome-usuario {
+/*#nome-usuario {
   flex: 1;
   font: inherit;
   border-width: 0;
   outline-width: 0;
   color: #04fa5a;
   background-color: transparent;
-}
+}*/
 
 #nome-usuario::-webkit-input-placeholder {
   color: #04fa5a;
 }
 
-#salvar,
+/*#salvar,
 #carregar {
   font: inherit;
   outline: none;
@@ -137,4 +149,29 @@ body {
 
 #salvar {
   margin-left: 1px;
+}*/
+
+.cont-botoes > button {
+  background-color: #04fa5a;
+  color: #000;
+  font-weight: bold;
+  display: inline;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cont-botoes > button:hover {
+  background-color: #6aff9e;
+  color: #000;
+  font-weight: bold;
+}
+
+.cont-botoes > button:focus {
+  background-color: #6aff9e;
+  color: #000;
+  font-weight: bold;
+}
+
+form {
+  clear: both;
 }

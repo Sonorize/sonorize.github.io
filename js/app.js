@@ -42,7 +42,3 @@ function searchA() {
 function resetVideoHeight() {
     $(".video").css("height", $("#results").width() * 9/16);
 }
-
-function init() {
-  alert();
-}

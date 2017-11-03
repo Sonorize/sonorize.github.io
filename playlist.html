@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="theme-color" content="#04fa5a">
   <title>Sonorize</title>
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/estilo.css" type="text/css" rel="stylesheet" media="screen,projection"/>
@@ -37,39 +38,47 @@
     </ul>
   </header>
 
-  <main id="app">
-    <div id="info-usuario">
-      <!-- <label for="nome-usuario">Nome do usuário:</label> -->
-      <input type="text" id="nome-usuario" placeholder="Digite seu nome...">
-      <button id="carregar">Carregar</button>
-      <button id="salvar">Salvar</button>
-    </div>
-    <button id="incluir-nova-tarefa" class="btn-floating btn-large waves-effect waves-light #212121 grey darken-4"><i class="material-icons">add</i></button>
-    <div id="nova-tarefa">
-      <input type="text" class="nova-tarefa "id="nova-tarefa-artista" autofocus placeholder="Digite o artista">
-      <input type="text" class="nova-tarefa" id="nova-tarefa-musica" autofocus placeholder="Digite o nome da música">
+  <div id="fundo">
 
+    <div class="">
 
     </div>
-    <ul id="lista-playlist">
 
-    </ul>
-
-
-
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <form action="#">
-                <p><input type="text" id="search" placeholder="Digite para procurar no YouTube" autocomplete="off" class="form-control" /></p>
-                <p><input type="submit" value="Buscar" class="form-control btn btn-primary w100"></p>
-            </form>
-            <div id="results"></div>
-        </div>
-    </div>
-
-  </main>
+    <main id="app">
+      <div id="info-usuario">
+        <label for="nome-usuario">Nome do usuário:</label>
+        <input type="text" id="nome-usuario" placeholder="Digite seu nome...">
+      </div>
+      <div id="nova-tarefa">
+        <label for="nome-usuario">Nome do artista:</label>
+        <input type="text" class="nova-tarefa "id="nova-tarefa-artista" autofocus placeholder="Digite o artista">
+        <label for="nome-usuario">Nome da musica:</label>
+        <input type="text" class="nova-tarefa" id="nova-tarefa-musica" autofocus placeholder="Digite o nome da música">
+      </div>
+      <button id="incluir-nova-tarefa" class="btn-floating btn-large waves-effect waves-light #212121 grey darken-4"><i class="material-icons">add</i></button>
 
 
+      <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+              <form action="#">
+                <label for="nome-usuario">Título da música no Youtube:</label>
+                  <input type="text" id="search" placeholder="Digite para procurar no YouTube"/>
+                  <div class="cont-botoes">
+                    <button type="submit" class="btn waves-effect waves-dark"><i class="material-icons left">search</i>Buscar</button>
+                    <button id="carregar" class="btn waves-effect waves-dark"><i class="material-icons left">file_download</i>Carregar</button>
+                    <button id="salvar" class="btn waves-effect waves-dark"><i class="material-icons left">save</i>Salvar</button>
+                  </div>
+              </form>
+              <div id="results"></div>
+          </div>
+      </div>
+
+      <ul id="lista-playlist">
+
+      </ul>
+
+    </main>
+</div>
 
   <footer class="page-footer #000000 black">
     <div class="container">
