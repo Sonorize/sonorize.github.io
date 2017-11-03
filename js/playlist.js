@@ -42,22 +42,29 @@ botaoIncluirEl.addEventListener('click', function(e) {
   let artistaInputEl = document.querySelector('#nova-tarefa-artista');
   let musicaInputEl = document.querySelector('#nova-tarefa-musica');
 
-  // cria um novo objeto 'tarefa'
-  let novaTarefa = {
-    artista: artistaInputEl.value,
-    musica: musicaInputEl.value,
-  };
+  if ((artistaInputEl.value == '') || (musicaInputEl.value == '')) {
+    Materialize.toast('Campos em branco!', 3000);
+  }
 
-  // coloca-o no vetor 'tarefas'
-  tarefas.push(novaTarefa);
-  // cria o <li> referente a essa tarefa e o
-  // insere na página
-  insereTarefaNaPagina(novaTarefa);
+  else {
+    // cria um novo objeto 'tarefa'
+    let novaTarefa = {
+      artista: 'Artista: ' + artistaInputEl.value,
+      musica: 'Música: ' + musicaInputEl.value,
+    };
 
-  // limpar o input e devolver o foco pra ele
-  artistaInputEl.value = '';
-  musicaInputEl.value = '';
-  artistaInputEl.focus();
+    // coloca-o no vetor 'tarefas'
+    tarefas.push(novaTarefa);
+    // cria o <li> referente a essa tarefa e o
+    // insere na página
+    insereTarefaNaPagina(novaTarefa);
+
+    // limpar o input e devolver o foco pra ele
+    artistaInputEl.value = '';
+    musicaInputEl.value = '';
+    artistaInputEl.focus();
+  }
+
 });
 
 // Exercício 3: botão para salvar e carregar nomes

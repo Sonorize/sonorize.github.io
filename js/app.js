@@ -2,10 +2,11 @@ function googleApiClientReady() {
   gapi.client.setApiKey("AIzaSyB04SN1r0eQXLugq551J8RM66CRxDXcpdY");
   gapi.client.load("youtube", "v3", function() {
     searchA();
-    //API do YouTube pronta
+    //API do YouTube sendo chamada
   });
 }
 
+//Função para colocar título correto nos vídeos
 function tplawesome(e,t){res=e;for(let n=0;n<t.length;n++){res=res.replace(/\{\{(.*?)\}\}/g,function(e,r){return t[n][r]})}return res}
 
 function searchA() {
@@ -22,18 +23,17 @@ function searchA() {
        });
        //Executando a requsição
        request.execute(function(response) {
+         //Ordenando os resultados
           let results = response.result;
           $("#results").html("");
           $.each(results.items, function(index, item) {
-            $.get("tpl/item.html", function(data) {
+            $.get("video/item.html", function(data) {
                 $("#results").append(tplawesome(data, [{"title":item.snippet.title, "videoid":item.id.videoId}]));
             });
           });
           resetVideoHeight();
        });
     });
-
-    /// fim do $('form')
   });
 
     $(window).on("resize", resetVideoHeight);

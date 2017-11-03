@@ -40,8 +40,36 @@
 
   <div id="fundo">
 
-    <div class="">
+    <div class="container white-text">
+      <div class="section">
+        <div class="row">
+          <h1 id="funciona" class="light center">Como usar</h1>
+          <div class="col s12 m4">
+            <div class="icon-block">
+              <h2 class="center">1</h2>
+              <h5 class="center">Preencha os campos</h5>
+              <p class="light center">Coloque seu nome, nome do artista e da música</p>
+            </div>
+          </div>
 
+          <div class="col s12 m4">
+            <div class="icon-block">
+              <h2 class="center">2</h2>
+              <h5 class="center">Procure o clip no Youtube</h5>
+              <p class="light center">Escolha entre os vídeos listados qual deseja colocar na playlist</p>
+            </div>
+          </div>
+
+          <div class="col s12 m4">
+            <div class="icon-block">
+              <h2 class="center">3</h2>
+              <h5 class="center">Salve tudo</h5>
+              <p class="light center">Salve sua playlist clicando no botão "+"</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
 
     <main id="app">
@@ -50,10 +78,12 @@
         <input type="text" id="nome-usuario" placeholder="Digite seu nome...">
       </div>
       <div id="nova-tarefa">
-        <label for="nome-usuario">Nome do artista:</label>
+        <label for="nova-tarefa-artista">Nome do artista:</label>
         <input type="text" class="nova-tarefa "id="nova-tarefa-artista" autofocus placeholder="Digite o artista">
-        <label for="nome-usuario">Nome da musica:</label>
+        <label for="nova-tarefa-musica">Nome da musica:</label>
         <input type="text" class="nova-tarefa" id="nova-tarefa-musica" autofocus placeholder="Digite o nome da música">
+        <label for="nova-tarefa-artista">Link do vídeo no YouTube (deixe em branco): </label>
+        <input type="text" class="nova-tarefa "id="nova-tarefa-link">
       </div>
       <button id="incluir-nova-tarefa" class="btn-floating btn-large waves-effect waves-light #212121 grey darken-4"><i class="material-icons">add</i></button>
 
@@ -62,7 +92,7 @@
           <div class="col-md-6 col-md-offset-3">
               <form action="#">
                 <label for="nome-usuario">Título da música no Youtube:</label>
-                  <input type="text" id="search" placeholder="Digite para procurar no YouTube"/>
+                  <input type="text" id="search" placeholder="Título que vamos procurar no YouTube"/>
                   <div class="cont-botoes">
                     <button type="submit" class="btn waves-effect waves-dark"><i class="material-icons left">search</i>Buscar</button>
                     <button id="carregar" class="btn waves-effect waves-dark"><i class="material-icons left">file_download</i>Carregar</button>
@@ -73,9 +103,14 @@
           </div>
       </div>
 
-      <ul id="lista-playlist">
+      <ul id="lista-playlist"></ul>
 
-      </ul>
+      <!-- <div class="col s12 m12">
+        <div class="icon-block">
+          <h5 class="center">Não encontrou o vídeo que queria? Veja estas dicas</h5>
+          <p class="light center">Salve sua playlist clicando no botão "+"</p>
+        </div>
+      </div> -->
 
     </main>
 </div>
