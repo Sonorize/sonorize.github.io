@@ -11,7 +11,13 @@
     let musicaInputEl = document.querySelector('#nova-tarefa-musica');
     let youtubeInputEl = document.querySelector('#search');
 
-    youtubeInputEl.innerHTML = artistaInputEl.value +  ' - ' + musicaInputEl.value;
+    if ((artistaInputEl.value == '') && (musicaInputEl.value == '')) {
+      youtubeInputEl.value = '';
+    }
+
+    else {
+      youtubeInputEl.value = artistaInputEl.value +  ' - ' + musicaInputEl.value;
+    }
 
   });
 
