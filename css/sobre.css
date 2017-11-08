@@ -1,0 +1,31 @@
+
+html, body {
+  min-height: 100%;
+}
+
+#fundo {
+  background-image: linear-gradient(45deg, #039ffa, #04fa5a);
+  min-height: calc(100% - 189.297px - 64px);
+}
+
+#conteudo {
+  margin: 0 auto;
+  min-width: 300px;
+  max-width: 900px;
+  background-color: #252525;
+  /*color: #04fa5a;
+  padding: 1rem;*/
+  min-height: calc(100% - 189.297px - 64px);
+}
+
+.logo-sobre {
+  text-align: center;
+  padding: 2rem;
+}
+
+#logo-mate {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 50%;
+
+}

@@ -86,13 +86,3 @@ BotaoCarregarEL.addEventListener('click', function(e) {
   tarefas = JSON.parse(TarefasCarregadas);
   tarefas.forEach(insereTarefaNaPagina);
 });
-
-// Adicionar o link do vídeo na lista pro Local Storage
-let BotaoVideoEl = document.querySelector('#btnvideo');
-BotaoVideoEl.addEventListener('click', function(e) {
-  let LinkVideoEl = document.querySelector('#link');
-  let LinkInputEl = document.querySelector('#nova-tarefa-link');
-
-  LinkInputEl.value = LinkVideoEl.src;
-
-});

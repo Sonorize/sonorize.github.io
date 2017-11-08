@@ -11,44 +11,32 @@ function tplawesome(e,t){res=e;for(let n=0;n<t.length;n++){res=res.replace(/\{\{
 
 function searchA() {
   $(function() {
-
     $('button[type="submit"]').on('click', function(e) {
-      let ytInputEl = $('input[name=search]').val();
+      e.preventDefault();
+      //Preparando a requsição
+      let request = gapi.client.youtube.search.list({
+        part: "snippet",
+        type: "video",
+        q: encodeURIComponent($("#search").val()).replace(/%20/g, "+"),
+        maxResults: 10,
+        order: "viewCount",
+      });
 
-      if (ytInputEl == '') {
-        Materialize.toast('Campos em branco!', 3000);
-      }
-
-      else {
-        $('button[type="submit"]').on('click', function(e) {
-          e.preventDefault();
-          //Preparando a requsição
-          let request = gapi.client.youtube.search.list({
-            part: "snippet",
-            type: "video",
-            q: encodeURIComponent($("#search").val()).replace(/%20/g, "+"),
-            maxResults: 10,
-            order: "viewCount",
-          });
-          //Executando a requsição
-          request.execute(function(response) {
-            //Ordenando os resultados
-            let results = response.result;
-            $("#results").html("");
-            $.each(results.items, function(index, item) {
-              $.get("video/item.html", function(data) {
-                $("#results").append(tplawesome(data, [{"title":item.snippet.title, "videoid":item.id.videoId}]));
-              });
-            });
-            resetVideoHeight();
+      //Executando a requsição
+      request.execute(function(response) {
+        //Ordenando os resultados
+        let results = response.result;
+        $("#results").html("");
+        $.each(results.items, function(index, item) {
+          $.get("video/item.html", function(data) {
+            $("#results").append(tplawesome(data, [{"title":item.snippet.title, "videoid":item.id.videoId}]));
           });
         });
 
-      }
+        resetVideoHeight();
 
+      });
     });
-
-
   });
 
     $(window).on("resize", resetVideoHeight);
