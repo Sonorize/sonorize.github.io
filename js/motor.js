@@ -18,7 +18,6 @@
     else {
       youtubeInputEl.value = artistaInputEl.value +  ' - ' + musicaInputEl.value;
     }
-
   });
 
 })(jQuery);
