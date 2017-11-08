@@ -18,14 +18,25 @@ html, body {
   min-height: calc(100% - 189.297px - 64px);
 }
 
-.logo-sobre {
+#logo {
   text-align: center;
   padding: 2rem;
 }
 
-#logo-mate {
+.logo-sobre {
   background-color: #fff;
   padding: 2rem;
   border-radius: 50%;
+  height: 12rem;
+}
 
+.usamos {
+  color: #fff;
+  text-align: center;
+  font-weight: 300;
+}
+
+.foto {
+  border-radius: 50%;
+  height: 12rem;
 }

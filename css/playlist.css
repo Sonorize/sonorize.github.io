@@ -59,6 +59,12 @@ html, body {
   top: 4rem;
 }
 
+@media only screen and (min-width : 600px) {
+  #incluir-nova-tarefa {
+
+  }
+}
+
 #incluir-nova-tarefa {
   clear: left;
   position: relative;
@@ -144,6 +150,13 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
   display: inline;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media only screen and (min-width: 600px) {
+  .cont-botoes > button {
+    display: block;
+    margin: 0 auto;
+  }
 }
 
 .cont-botoes > button:hover {
